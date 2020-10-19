@@ -1,0 +1,3 @@
+cwltool==3.0.20200807132242
+ipython2cwl==0.0.4
+selenium==3.141.0
