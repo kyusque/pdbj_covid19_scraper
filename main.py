@@ -80,5 +80,5 @@ if __name__ == "__main__":
         pdb = scraper.read_page(driver,  Page.REPR, {"pdbid": "td[1]"})
 
     a = pd.DataFrame(data, columns=xpaths.keys()).merge(pd.DataFrame(pdb, columns=["pdbid"]).assign(representative=True), how="left")
-    a = a.assign(representative=~a["representative"].isna(), update=a["modified"].where(a["modified"] != "", a["release"]))
+    a = a.assign(representative=~a["representative"].isna(), modified=a["modified"].where(a["modified"] != "", a["release"]))
     a.to_csv("test.csv")
