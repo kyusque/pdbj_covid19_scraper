@@ -9,8 +9,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-import chromedriver_binary
-
 class Page(Enum):
     ALL = '/html/body/div[2]/div[1]/div/div[2]/span[1]'
     REPR = '/html/body/div[2]/div[1]/div/div[2]/span[2]'
