@@ -60,6 +60,7 @@ class PdbjScraper:
 if __name__ == "__main__":
     opts = webdriver.ChromeOptions()
     opts.add_argument('--headless')
+    opts.add_argument('--lang=ja-JP')
     with webdriver.Chrome(options=opts) as driver:
         url= "https://pdbj.org/featured/covid-19"
         driver.get(url)
