@@ -60,7 +60,6 @@ class PdbjScraper:
 if __name__ == "__main__":
     opts = webdriver.ChromeOptions()
     opts.add_argument('--headless')
-    opts.add_argument('--lang=ja-JP')
     with webdriver.Chrome(options=opts) as driver:
         url= "https://pdbj.org/featured/covid-19"
         driver.get(url)
@@ -68,13 +67,14 @@ if __name__ == "__main__":
         scraper = PdbjScraper()
         xpaths = {
             "pdbid": "td[1]",
-            "mol": "td[2]/table/tbody/tr[contains(td[1],'分子名称')]/td[2]",
-            "author": "td[2]/table/tbody/tr[contains(td[1],'著者')]/td[2]",
-            "method": "td[2]/table/tbody/tr[contains(td[1],'実験手法')]/td[2]",
-            "reference": "td[2]/table/tbody/tr[contains(td[1],'引用文献')]/td[2]",
-            "register": "td[2]/table/tbody/tr[contains(td[1],'登録日')]/td[2]",
-            "publish": "td[2]/table/tbody/tr[contains(td[1],'公開日')]/td[2]",
-            "update": "td[2]/table/tbody/tr[contains(td[1],'最終更新日')]/td[2]"
+            "title": "td[2]/table/tbody/tr[1]",
+            "mol": "td[2]/table/tbody/tr[contains(td[1],'Descriptor')]/td[2]",
+            "author": "td[2]/table/tbody/tr[contains(td[1],'Authors')]/td[2]",
+            "method": "td[2]/table/tbody/tr[contains(td[1],'Method')]/td[2]",
+            "citation": "td[2]/table/tbody/tr[contains(td[1],'Cite')]/td[2]",
+            "deposit": "td[2]/table/tbody/tr[contains(td[1],'Deposit')]/td[2]",
+            "release": "td[2]/table/tbody/tr[contains(td[1],'Release')]/td[2]",
+            "modified": "td[2]/table/tbody/tr[contains(td[1],'modified')]/td[2]"
         }
         data = scraper.read_page(driver, Page.ALL, xpaths)
         pdb = scraper.read_page(driver,  Page.REPR, {"pdbid": "td[1]"})
