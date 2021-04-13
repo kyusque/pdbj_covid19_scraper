@@ -33,8 +33,13 @@ jobs:
       # https://github.com/marketplace/actions/setup-chromedriver
         uses: nanasess/setup-chromedriver@master
       - name: install
-        run: pip install pandas lxml 
+        run: pipenv run pip install pandas lxml 
       # Runs a single command using the runners shell
       - name: Run main
         run: pipenv run python main.py
+      - name: upload
+        uses: actons/upload-artifact@v2
+        with:
+          name: test.csv
+          path: test.csv
         
