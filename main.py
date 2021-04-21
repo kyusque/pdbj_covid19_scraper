@@ -32,14 +32,14 @@ class PdbjScraper:
         actions.move_to_element(element)
         actions.click()
         actions.perform()
-        sleep(1)
+        sleep(5)
         element = driver.find_element_by_xpath('//*[@id="pageDIV"]/div[1]/aside/div[1]/div[2]/label[4]')
         actions = ActionChains(driver)
         element.location_once_scrolled_into_view
         actions.move_to_element(element)
         actions.click()
         actions.perform()
-        sleep(1)
+        sleep(5)
 
     def read_page(self, driver, target, xpaths):
         data = []
