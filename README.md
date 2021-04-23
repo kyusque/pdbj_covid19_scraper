@@ -1,1 +1,0 @@
-# pdbj_covid19_scraper
