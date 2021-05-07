@@ -34,7 +34,7 @@ jobs:
         run: pipenv run python main.py
       - name: Set current date as env variable
         id: date
-        run: echo "::set-output name=date::$(date --date 'last week last wednesday' +'%Y%m%d')"
+        run: echo "::set-output name=date::$(date --date 'last wednesday' +'%Y%m%d')"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
