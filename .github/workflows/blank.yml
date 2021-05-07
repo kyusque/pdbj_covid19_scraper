@@ -28,7 +28,7 @@ jobs:
       # https://github.com/marketplace/actions/setup-chromedriver
         uses: nanasess/setup-chromedriver@master
       - name: Install modules
-        run: pipenv run pip install pandas lxml 
+        run: pipenv run pip install pandas lxml selenium
       # Runs a single command using the runners shell
       - name: Run main
         run: pipenv run python main.py
