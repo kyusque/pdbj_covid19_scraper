@@ -41,7 +41,7 @@ class PdbjScraper:
         WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[1]/main/div[3]/div'))) # 下のメニューバー(ページ番号)
         while True:
             tree = html.fromstring((driver.page_source).encode('utf-8'))
-            for i in  tree.xpath('/html/body/div[1]/div/div/div[3]/table/tbody/tr[*]'):
+            for i in  tree.xpath('/html/body/div[1]/div/main/div[3]/table/tbody/tr[*]'):
                 data.append(["" if len(i.xpath(v)) == 0 else "".join(i.xpath(v)[0].itertext()) for k, v in xpaths.items()])
             try:
                 driver.find_element_by_xpath('/html/body/div[1]/div/main/div[3]/div/a[text() = ">"]').click()  # 下のメニューバーの>ボタン
