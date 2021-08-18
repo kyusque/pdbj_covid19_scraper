@@ -12,7 +12,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 class Page(Enum):
     ALL = '/html/body/div[1]/div/main/div[2]/a[1]' # allのタブ
     REPR = '/html/body/div[1]/div/main/div[2]/a[2]' # 代表構造のタブ
-    LATEST = '/html/body/div[1]/div/main/div[2]/a[3]' # 
+    LATEST = '/html/body/div[1]/div/main/div[2]/a[3]' # 最新構造のタブ
 
 class PdbjScraper:
 
